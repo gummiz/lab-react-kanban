@@ -164,7 +164,7 @@ select {
 }
 
 .app > * {
-  padding:1rem;
+  padding: 1rem;
 }
 /* assign columns to grid areas */
 .app > .navbar {
