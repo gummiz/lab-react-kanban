@@ -1,16 +1,12 @@
-
 .sidebar {
-    /* height: 91vh; */
-    width: 150px;
-    background-color: blueviolet;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
-    /* min-height: 100vh; */
+  background-color: blueviolet;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
 }
 
 .sidebar ul {
-    list-style: none;
+  list-style: none;
 }

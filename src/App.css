@@ -150,22 +150,19 @@ select {
   vertical-align: middle;
 }
 
+/* ====== GRID APP MANAGMENT ========= */
+
 .app {
-  /* display: flex;
-  flex-direction: column;
-  min-height: 100vh; */
   display: grid;
   grid-template-areas:
-    "navbar"
-    "kanban"
-    "sidebar"
-    "footer";
-  min-height: 100svh;
+    'navbar'
+    'kanban'
+    'sidebar'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
 }
 
-.app > * {
-  padding: 1rem;
-}
 /* assign columns to grid areas */
 .app > .navbar {
   grid-area: navbar;
@@ -183,3 +180,15 @@ select {
   grid-area: footer;
   background: #72f181;
 }
+
+/* tablet breakpoint */
+@media (min-width: 768px) {
+  .app {
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-areas:
+      'navbar navbar navbar'
+      'sidebar kanban kanban'
+      'footer footer footer';
+  }
+}
+/* ===== End of Grid app management  */
