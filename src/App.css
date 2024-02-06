@@ -184,11 +184,11 @@ select {
 /* tablet breakpoint */
 @media (min-width: 768px) {
   .app {
-    grid-template-columns: 200px 1fr 1fr;
+    grid-template-columns: 200px 1fr;
     grid-template-areas:
-      'navbar navbar navbar'
-      'sidebar kanban kanban'
-      'footer footer footer';
+      'navbar navbar '
+      'sidebar kanban '
+      'footer footer ';
   }
 }
 /* ===== End of Grid app management  */
