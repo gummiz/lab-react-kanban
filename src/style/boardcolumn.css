@@ -1,0 +1,11 @@
+.board-column {
+    width: 200px;
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.board-column__titleDiv {
+    display: flex;
+    justify-content: space-between;
+}
