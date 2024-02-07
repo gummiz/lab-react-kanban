@@ -1,0 +1,25 @@
+.detaildialog {
+    height: 100%;
+    width: 100%;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: flex;
+    align-Items: center;
+    justify-content: center;
+}
+
+.detaildialog__content {
+    background: white;
+    color: black;
+    height: 150;
+    width: 240;
+    margin: auto;
+    padding: 2%;
+    /* border: 2px solid #000; */
+    border-radius: 10px;
+    box-shadow: 2px solid black;
+
+}
