@@ -3,11 +3,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgb(42, 160, 187);
+  background-color: #262526;
+  color: #EAEAEA;
 }
 
 .navbar__left {
-  width: 30vw;
+  /* width: 30vw; */
   display: flex;
   justify-content: space-between;
   align-items: center;

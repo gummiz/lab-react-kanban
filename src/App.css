@@ -74,9 +74,10 @@ video {
   padding: 0;
   border: 0;
   outline: 0;
-  font-size: 100%;
+  font-size: 14px;
   vertical-align: baseline;
   background: transparent;
+  box-sizing: border-box; 
 }
 body {
   line-height: 1;
@@ -153,6 +154,7 @@ select {
 /* ====== GRID APP MANAGMENT ========= */
 
 .app {
+  font-family: 'Inter', sans-serif;
   display: grid;
   grid-template-areas:
     'navbar'
@@ -166,19 +168,15 @@ select {
 /* assign columns to grid areas */
 .app > .navbar {
   grid-area: navbar;
-  background: #f97171;
 }
 .app > .kanban {
   grid-area: kanban;
-  background: #5994a2;
 }
 .app > .sidebar {
   grid-area: sidebar;
-  background: #f5d55f;
 }
 .app > .footer {
   grid-area: footer;
-  background: #72f181;
 }
 
 /* tablet breakpoint */

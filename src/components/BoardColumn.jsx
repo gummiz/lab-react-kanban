@@ -18,8 +18,8 @@ function BoardColumn({ boardTitle, data }) {
   return (
     <div className="board-column">
       <div className="board-column__titleDiv">
-        <h3>{boardTitle}</h3>
-        +
+        <h4>{boardTitle}</h4>
+        <h4>+</h4>
       </div>
 
       {

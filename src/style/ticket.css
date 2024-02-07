@@ -1,0 +1,26 @@
+.ticket {
+    background-color: #3D3D3D;
+    margin-bottom: 10px;
+    /* padding-left: 15px; */
+    padding: 15px;
+    width: 287px;
+    height: 188px;
+    border-left: 1px solid #73AF4F;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.ticket h4 {
+    font-weight: 500;
+    padding-bottom: 13px;
+}
+
+.ticket p {
+    font-size: 1em;
+    font-weight: 300;
+    color: rgb(234, 234, 234, 0.5);
+    line-height: 18px;
+    
+}

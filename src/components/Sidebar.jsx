@@ -10,7 +10,7 @@ function Sidebar() {
         </div>
         <div className="sidebar__subsection">
             <ul>
-                <li>about</li>    
+                <li>About</li>    
             </ul>
         </div>
  </div>

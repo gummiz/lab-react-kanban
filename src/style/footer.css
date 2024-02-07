@@ -1,11 +1,19 @@
 .footer {
+  background-color: #262526;
+  color: #EAEAEA;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(42, 160, 187);
+ 
 }
 
 .footer__link {
   text-decoration: none;
+ 
+    color: #EAEAEA;
+}
+
+.footer__link:hover {
+  color: #4FAF9D;
 }

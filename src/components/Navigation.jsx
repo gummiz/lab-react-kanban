@@ -7,9 +7,9 @@ function Navigation() {
         <div className="navbar__left">
           {/* Icon */}
           <img src="" alt="Burger Icon" />
+        </div>
           {/* Title */}
           <h3>Kanban Name</h3>
-        </div>
         {/* Logo */}
        
         <img src="" alt="Our Own Logo" />
