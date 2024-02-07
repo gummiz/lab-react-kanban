@@ -2,18 +2,28 @@ import React from "react";
 import { useState } from "react";
 import "../style/boardcolumn.css";
 import Ticket from "./Ticket";
-
+import DetailDialog from "./DatailDialog";
 
 function BoardColumn({ boardTitle, data }) {
-    const [dataState, setDataState] = useState(data)
+  const [dataState, setDataState] = useState(data);
+  const [open, setOpen] = useState(false);
+  const [detailData, setDetailData] = useState();
 
-    const deleteHandler = (index) => {
-        // console.log(dataState);
-        // const updatedData = newTestArr.filter((ticket, ticketIndex)=>{ticketIndex  !==  index})
-        const updatedData = [...dataState]
-        updatedData.splice(index, 1)
-        setDataState(updatedData)
-    }
+  const deleteHandler = (index) => {
+    const updatedData = [...dataState];
+    updatedData.splice(index, 1);
+    setDataState(updatedData);
+  };
+
+  // Detail Dialog popup
+  const openHandler = (index) => {
+    setDetailData(dataState[index]);
+    setOpen(true);
+  };
+
+  const closeHandler = () => {
+    setOpen(false);
+  };
 
   return (
     <div className="board-column">
@@ -22,18 +32,20 @@ function BoardColumn({ boardTitle, data }) {
         <h4>+</h4>
       </div>
 
-      {
-        dataState.map((ticket, index) => {
-            
-            return <Ticket data={ticket} key={ticket.id} onDelete={() => deleteHandler(index)}/>
-        })
-      }
-    
+      {dataState.map((ticket, index) => {
+        return (
+          <Ticket
+            data={ticket}
+            key={ticket.id}
+            onDelete={() => deleteHandler(index)}
+            onDetails={() => openHandler(index)}
+          />
+        );
+      })}
+
+      <DetailDialog isOpen={open} onClose={closeHandler} data={detailData} />
     </div>
   );
 }
 
-
-
 export default BoardColumn;
-
