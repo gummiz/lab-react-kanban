@@ -8,7 +8,6 @@ function BoardColumn({ boardTitle, data }) {
   const [dataState, setDataState] = useState(data);
   const [open, setOpen] = useState(false);
   const [detailData, setDetailData] = useState();
-  // const [inputs, setInputs] = useState({})
 
   const deleteHandler = (index) => {
     const updatedData = [...dataState];
@@ -25,6 +24,7 @@ function BoardColumn({ boardTitle, data }) {
   const closeHandler = () => {
     setOpen(false);
   };
+
 
 
   const submitHandler = (e) => {
@@ -48,8 +48,7 @@ function BoardColumn({ boardTitle, data }) {
           />
         );
       })}
-{/* 
-      <UpdateTicket isOpen={open} onClose={closeHandler} data={detailData}  onInputHandler={inputHandler} onSubmit={submitHandler}/> */}
+
 
       <UpdateTicket isOpen={open} onClose={closeHandler} data={detailData} onSubmit={submitHandler}/>
     </div>

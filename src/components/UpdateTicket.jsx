@@ -2,14 +2,14 @@ import "../style/updateTicket.css";
 import { useState } from "react";
 
 function UpdateTicket({ isOpen, onClose, data, onSubmit }) {
-  const [inputs, setInputs] = useState({})
-  if (!isOpen) return null;
+  if (!isOpen) return null; 
+  const [inputs, setInputs] = useState(data);
 
-  const inputHandler = (e) =>{
+  const inputHandler = (e) => {
     console.log("changing");
-    setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  }
-  
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   return (
     <div className="updateTicket">
       <div className="updateTicket__content">
@@ -18,9 +18,15 @@ function UpdateTicket({ isOpen, onClose, data, onSubmit }) {
           {data.title}
         </h1> */}
         <form onSubmit={onSubmit}>
-          <input name="title" type="text" placeholder="Title of the Task" value={data.title || ''} onChange={inputHandler}/>
+          <input
+            name="title"
+            type="text"
+            placeholder="Title of the Task"
+            value={inputs.title || ''}
+            onChange={inputHandler}
+          />
 
-          <label>
+          {/* <label>
             Assignee
             <input name="assignee" type="text" placeholder="assignee" value={data.assignee || ''} />
           </label>
@@ -48,8 +54,8 @@ function UpdateTicket({ isOpen, onClose, data, onSubmit }) {
           <label>
             Due Date
             <input name="dueDate" type="date" placeholder="" value={data.dueDate || ''}/>
-          </label>
-          <button type="submit">Add New Ticket</button>
+          </label> */}
+          <button type="submit">Save Ticket</button>
         </form>
         <button onClick={onClose}>Closing</button>
       </div>
