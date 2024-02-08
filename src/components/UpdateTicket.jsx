@@ -9,13 +9,14 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate  }) {
     console.log("changing");
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
+  console.log(data.lentgh)
   const submitHandler = (e) => {
     e.preventDefault()
-    
- 
+    // data.length === 0 ? onNewTicket(inputs) : 
     onUpdate(inputs);
     setInputs({});
+
+    
     onClose();
   }
 
