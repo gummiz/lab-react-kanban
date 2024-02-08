@@ -48,5 +48,15 @@
     "priority": "Low",
     "createdDate": "2023-09-19",
     "dueDate": "2023-09-30"
+  },
+  {
+    "id": "6",
+    "title": "NEW ONE",
+    "description": "Update user documentation with the latest features and changes.",
+    "assignee": "David Wilson",
+    "status": "Done",
+    "priority": "",
+    "createdDate": "2023-09-19",
+    "dueDate": "2023-09-30"
   }
 ]

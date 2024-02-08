@@ -25,11 +25,14 @@ function BoardColumn({ boardTitle, data }) {
     setOpen(false);
   };
 
-
-
-  const submitHandler = (e) => {
-    e.preventDefault()
+  const updateTicket = (input) => {
+    console.log("updated");
+    // const newData = dataState.map((tickets) => tickets.id===input.id ? tickets = input : tickets);
+    // console.log()
+    setDataState(dataState.map((tickets) => tickets.id===input.id ? tickets = input : tickets));
   }
+
+  
 
   return (
     <div className="board-column">
@@ -50,7 +53,8 @@ function BoardColumn({ boardTitle, data }) {
       })}
 
 
-      <UpdateTicket isOpen={open} onClose={closeHandler} data={detailData} onSubmit={submitHandler}/>
+      {/* <UpdateTicket isOpen={open} onClose={closeHandler} data={detailData}  setValFn={setDetailData}/> */}
+      <UpdateTicket isOpen={open} onClose={closeHandler} data={detailData}  onUpdate={updateTicket}/>
     </div>
   );
 }
