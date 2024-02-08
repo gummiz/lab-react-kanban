@@ -27,8 +27,7 @@ function BoardColumn({ boardTitle, data }) {
 
   const updateTicket = (input) => {
     console.log("updated");
-    // const newData = dataState.map((tickets) => tickets.id===input.id ? tickets = input : tickets);
-    // console.log()
+
     setDataState(dataState.map((tickets) => tickets.id===input.id ? tickets = input : tickets));
   }
 
