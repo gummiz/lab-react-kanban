@@ -1,4 +1,4 @@
-.detaildialog {
+.updateTicket {
     height: 100%;
     width: 100%;
     left: 50%;
@@ -11,15 +11,33 @@
     justify-content: center;
 }
 
-.detaildialog__content {
+.updateTicket__content {
     background: white;
     color: black;
-    height: 150;
-    width: 240;
+    height: 350px;
+    width: 500px;
     margin: auto;
     padding: 2%;
     /* border: 2px solid #000; */
     border-radius: 10px;
     box-shadow: 2px solid black;
+    display: flex;
+    flex-direction: column;
 
+}
+
+.updateTicket form {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+
+}
+
+.updateTicket form input, label {
+    
+    padding-bottom: 15px;
+
+}
+.updateTicket__radio{
+    /* display: none; */
 }

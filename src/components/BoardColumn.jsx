@@ -2,12 +2,13 @@ import React from "react";
 import { useState } from "react";
 import "../style/boardcolumn.css";
 import Ticket from "./Ticket";
-import DetailDialog from "./DatailDialog";
+import UpdateTicket from "./UpdateTicket";
 
 function BoardColumn({ boardTitle, data }) {
   const [dataState, setDataState] = useState(data);
   const [open, setOpen] = useState(false);
   const [detailData, setDetailData] = useState();
+  // const [inputs, setInputs] = useState({})
 
   const deleteHandler = (index) => {
     const updatedData = [...dataState];
@@ -24,6 +25,11 @@ function BoardColumn({ boardTitle, data }) {
   const closeHandler = () => {
     setOpen(false);
   };
+
+
+  const submitHandler = (e) => {
+    e.preventDefault()
+  }
 
   return (
     <div className="board-column">
@@ -42,8 +48,10 @@ function BoardColumn({ boardTitle, data }) {
           />
         );
       })}
+{/* 
+      <UpdateTicket isOpen={open} onClose={closeHandler} data={detailData}  onInputHandler={inputHandler} onSubmit={submitHandler}/> */}
 
-      <DetailDialog isOpen={open} onClose={closeHandler} data={detailData} />
+      <UpdateTicket isOpen={open} onClose={closeHandler} data={detailData} onSubmit={submitHandler}/>
     </div>
   );
 }
