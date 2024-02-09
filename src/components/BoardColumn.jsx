@@ -1,10 +1,15 @@
-import React from "react";
-import { useState } from "react";
-import "../style/boardcolumn.css";
-import Ticket from "./Ticket";
-import UpdateTicket from "./UpdateTicket";
+import React from 'react';
+import { useState } from 'react';
+import '../style/boardcolumn.css';
+import Ticket from './Ticket';
+import UpdateTicket from './UpdateTicket';
 
-function BoardColumn({ boardTitle, data }) {
+function BoardColumn({
+  boardTitle,
+  data,
+  ticketsCount,
+  incrementCountTickets,
+}) {
   const [dataState, setDataState] = useState(data);
   const [open, setOpen] = useState(false);
   const [detailData, setDetailData] = useState();
@@ -14,17 +19,16 @@ function BoardColumn({ boardTitle, data }) {
     updatedData.splice(index, 1);
     setDataState(updatedData);
   };
-  
   // Detail Dialog popup
   const openHandler = (index) => {
-    
     // get ALL Data fromm Kanban next to find the highest ID, right now we only get the filtered per Column
     // const allTicketId = data.map((ticket) => Number(ticket.id))
     // console.log(allTicketId);
 
+    typeof index !== 'undefined'
+      ? setDetailData(dataState[index])
+      : addNewTicket();
 
-    const newTicket = {id : '10', title: 'new Ticket'}
-    typeof index !== 'undefined' ? setDetailData(dataState[index]) : setDetailData(newTicket);
     setOpen(true);
   };
 
@@ -33,12 +37,20 @@ function BoardColumn({ boardTitle, data }) {
   };
 
   const updateTicket = (input) => {
-    console.log("updated");
+    setDataState(
+      dataState.map((tickets) =>
+        tickets.id === input.id ? (tickets = input) : tickets
+      )
+    );
+  };
 
-    setDataState(dataState.map((tickets) => tickets.id===input.id ? tickets = input : tickets));
-  }
-
-  
+  const addNewTicket = () => {
+    incrementCountTickets();
+    const newTicket = { id: `${ticketsCount + 1}`, title: 'new Ticket' };
+    setDataState([...dataState, newTicket]);
+    setDetailData(newTicket);
+    console.log(newTicket);
+  };
 
   return (
     <div className="board-column">
@@ -58,9 +70,13 @@ function BoardColumn({ boardTitle, data }) {
         );
       })}
 
-
       {/* <UpdateTicket isOpen={open} onClose={closeHandler} data={detailData}  setValFn={setDetailData}/> */}
-      <UpdateTicket isOpen={open} onClose={closeHandler} data={detailData}  onUpdate={updateTicket}/>
+      <UpdateTicket
+        isOpen={open}
+        onClose={closeHandler}
+        data={detailData}
+        onUpdate={updateTicket}
+      />
     </div>
   );
 }

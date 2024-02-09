@@ -1,24 +1,21 @@
-import "../style/updateTicket.css";
-import { useState } from "react";
+import '../style/updateTicket.css';
+import { useState } from 'react';
 
-function UpdateTicket({ isOpen, onClose, data, onUpdate  }) {
+function UpdateTicket({ isOpen, onClose, data, onUpdate }) {
   if (!isOpen) return null;
   const [inputs, setInputs] = useState(data);
 
   const inputHandler = (e) => {
-    console.log("changing");
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  console.log(data.lentgh)
+
   const submitHandler = (e) => {
-    e.preventDefault()
-    // data.length === 0 ? onNewTicket(inputs) : 
+    e.preventDefault();
     onUpdate(inputs);
     setInputs({});
 
-    
     onClose();
-  }
+  };
 
   return (
     <div className="updateTicket">
@@ -32,7 +29,7 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate  }) {
             name="title"
             type="text"
             placeholder="Title of the Task"
-            value={inputs.title || ""}
+            value={inputs.title || ''}
             onChange={inputHandler}
           />
 
@@ -42,7 +39,7 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate  }) {
               name="assignee"
               type="text"
               placeholder="assignee"
-              value={inputs.assignee || ""}
+              value={inputs.assignee || ''}
               onChange={inputHandler}
             />
           </label>
@@ -52,7 +49,7 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate  }) {
               name="description"
               type="text"
               placeholder="Description"
-              value={inputs.description || ""}
+              value={inputs.description || ''}
               onChange={inputHandler}
             />
           </label>
@@ -66,7 +63,7 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate  }) {
                 type="radio"
                 value="Low"
                 className="updateTicket__radio"
-                checked={inputs.priority === "Low" || false}
+                checked={inputs.priority === 'Low' || false}
                 onChange={inputHandler}
               />
             </label>
@@ -77,7 +74,7 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate  }) {
                 type="radio"
                 className="updateTicket__radio"
                 value="Medium"
-                checked={inputs.priority === "Medium" || false}
+                checked={inputs.priority === 'Medium' || false}
                 onChange={inputHandler}
               />
             </label>
@@ -88,7 +85,7 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate  }) {
                 type="radio"
                 className="updateTicket__radio"
                 value="High"
-                checked={inputs.priority === "High" || false}
+                checked={inputs.priority === 'High' || false}
                 onChange={inputHandler}
               />
             </label>
@@ -100,7 +97,7 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate  }) {
               name="dueDate"
               type="date"
               placeholder=""
-              value={data.dueDate || ""}
+              value={data.dueDate || ''}
               onChange={inputHandler}
             />
           </label>
