@@ -4,7 +4,7 @@ import "../style/boardcolumn.css";
 import Ticket from "./Ticket";
 import UpdateTicket from "./UpdateTicket";
 
-function BoardColumn({ boardTitle, data }) {
+function BoardColumn({ boardTitle, data, onNewTicket }) {
   const [dataState, setDataState] = useState(data);
   const [open, setOpen] = useState(false);
   const [detailData, setDetailData] = useState();
@@ -14,17 +14,18 @@ function BoardColumn({ boardTitle, data }) {
     updatedData.splice(index, 1);
     setDataState(updatedData);
   };
-  
+
+
+
   // Detail Dialog popup
   const openHandler = (index) => {
-    
     // get ALL Data fromm Kanban next to find the highest ID, right now we only get the filtered per Column
     // const allTicketId = data.map((ticket) => Number(ticket.id))
     // console.log(allTicketId);
 
-
-    const newTicket = {id : '10', title: 'new Ticket'}
-    typeof index !== 'undefined' ? setDetailData(dataState[index]) : setDetailData(newTicket);
+    typeof index !== "undefined"
+      ? setDetailData(dataState[index])
+      : createNewTicket();
     setOpen(true);
   };
 
@@ -35,10 +36,32 @@ function BoardColumn({ boardTitle, data }) {
   const updateTicket = (input) => {
     console.log("updated");
 
-    setDataState(dataState.map((tickets) => tickets.id===input.id ? tickets = input : tickets));
-  }
+    setDataState(
+      dataState.map((tickets) =>
+        tickets.id === input.id ? (tickets = input) : tickets
+      )
+    );
+  };
+    
+  const displayCreatedDate = () => {
+    const today = new Date();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const year = today.getFullYear();
+    const day = today.getDate().toString().padStart(2, '0');
+    const currentDate = year + '-' + month + '-' + day;
+    return currentDate;
+  };
 
-  
+  const createNewTicket = () => {
+    const newID = onNewTicket();
+    const newTicket = { id: newID, title: "new Ticket",  createdDate: displayCreatedDate(), status: boardTitle };
+    const updatedData = [newTicket, ...dataState];
+    setDataState(updatedData);
+
+    console.log("New Ticket", newTicket);
+    console.table(newTicket);
+    setDetailData(newTicket);
+  };
 
   return (
     <div className="board-column">
@@ -58,9 +81,13 @@ function BoardColumn({ boardTitle, data }) {
         );
       })}
 
-
       {/* <UpdateTicket isOpen={open} onClose={closeHandler} data={detailData}  setValFn={setDetailData}/> */}
-      <UpdateTicket isOpen={open} onClose={closeHandler} data={detailData}  onUpdate={updateTicket}/>
+      <UpdateTicket
+        isOpen={open}
+        onClose={closeHandler}
+        data={detailData}
+        onUpdate={updateTicket}
+      />
     </div>
   );
 }
