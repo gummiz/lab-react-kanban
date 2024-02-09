@@ -21,10 +21,6 @@ function BoardColumn({
   };
   // Detail Dialog popup
   const openHandler = (index) => {
-    // get ALL Data fromm Kanban next to find the highest ID, right now we only get the filtered per Column
-    // const allTicketId = data.map((ticket) => Number(ticket.id))
-    // console.log(allTicketId);
-
     typeof index !== 'undefined'
       ? setDetailData(dataState[index])
       : addNewTicket();
@@ -42,13 +38,29 @@ function BoardColumn({
         tickets.id === input.id ? (tickets = input) : tickets
       )
     );
+    console.log(dataState);
+  };
+
+  const displayCreatedDate = () => {
+    const today = new Date();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const year = today.getFullYear();
+    const day = today.getDate().toString().padStart(2, '0');
+    const currentDate = year + '-' + month + '-' + day;
+    return currentDate;
   };
 
   const addNewTicket = () => {
     incrementCountTickets();
-    const newTicket = { id: `${ticketsCount + 1}`, title: 'new Ticket' };
+    const newTicket = {
+      id: `${ticketsCount + 1}`,
+      title: 'new Ticket',
+      status: `${boardTitle}`,
+      createdDate: displayCreatedDate(),
+    };
     setDataState([...dataState, newTicket]);
     setDetailData(newTicket);
+
     console.log(newTicket);
   };
 
