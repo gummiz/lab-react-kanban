@@ -1,7 +1,7 @@
 import "../style/updateTicket.css";
 import { useState } from "react";
 
-function UpdateTicket({ isOpen, onClose, data, onUpdate  }) {
+function UpdateTicket({ isOpen, onClose, data, onUpdate }) {
   if (!isOpen) return null;
   const [inputs, setInputs] = useState(data);
 
@@ -10,18 +10,21 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate  }) {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const submitHandler = (e) => {
-    e.preventDefault()
-    // data.length === 0 ? onNewTicket(inputs) : 
+    e.preventDefault();
+    // data.length === 0 ? onNewTicket(inputs) :
     onUpdate(inputs);
     setInputs({});
 
-    
     onClose();
-  }
+  };
+
+  const onInsideClick = (e) => {
+    e.stopPropagation();
+  };
 
   return (
-    <div className="updateTicket">
-      <div className="updateTicket__content">
+    <div className="updateTicket" onClick={onClose}>
+      <div className="updateTicket__content" onClick={onInsideClick}>
         {/* <h1>
           Dialog
           {data.title}

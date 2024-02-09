@@ -10,6 +10,7 @@ function BoardColumn({ boardTitle, data, onNewTicket }) {
   const [detailData, setDetailData] = useState();
 
   const deleteHandler = (index) => {
+    
     const updatedData = [...dataState];
     updatedData.splice(index, 1);
     setDataState(updatedData);
@@ -19,11 +20,7 @@ function BoardColumn({ boardTitle, data, onNewTicket }) {
 
   // Detail Dialog popup
   const openHandler = (index) => {
-    // get ALL Data fromm Kanban next to find the highest ID, right now we only get the filtered per Column
-    // const allTicketId = data.map((ticket) => Number(ticket.id))
-    // console.log(allTicketId);
-
-    typeof index !== "undefined"
+     typeof index !== "undefined"
       ? setDetailData(dataState[index])
       : createNewTicket();
     setOpen(true);

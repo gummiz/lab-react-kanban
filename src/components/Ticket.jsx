@@ -3,7 +3,10 @@ import "../style/ticket.css";
 
 function Ticket({ data, onDelete, onDetails }) {
 
-
+  const handleDelete = (e) => {
+    e.stopPropagation();
+    onDelete(); 
+  }
 
   return (
     <div className="ticket" onClick={onDetails}>
@@ -14,7 +17,7 @@ function Ticket({ data, onDelete, onDetails }) {
       <div className="ticket__footer">
         {/* <img src="" alt="" /> */}
         <p>{data.dueDate}</p>
-        <button onClick={onDelete}>Delete</button>
+        <button onClick={handleDelete}>Delete</button>
       </div>
     </div>
   );
