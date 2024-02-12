@@ -5,3 +5,17 @@
     display: flex;
     
 }
+
+.spider {
+    width: 436px;
+    height: 390px;
+    position: absolute;
+    right: -78px;
+    top: 55px;
+}
+
+
+.errorpage h2 {
+    text-align: center;
+    vertical-align: middle;
+}

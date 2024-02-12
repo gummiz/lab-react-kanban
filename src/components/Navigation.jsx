@@ -1,4 +1,5 @@
 import "../style/navigation.css"
+import logo from "../assets/logo-ironhack-blue.png"
 
 function Navigation() {
   return (
@@ -6,13 +7,13 @@ function Navigation() {
       <div className="navbar">
         <div className="navbar__left">
           {/* Icon */}
-          <img src="" alt="Burger Icon" />
+          {/* <img src="" alt="Burger Icon" /> */}
+          <h3>HackBoard</h3>
         </div>
           {/* Title */}
-          <h3>Kanban Name</h3>
         {/* Logo */}
        
-        <img src="" alt="Our Own Logo" />
+        <img src={logo} alt="Our Own Logo" className="navbar__logo"/>
       </div>
     </>
   );
