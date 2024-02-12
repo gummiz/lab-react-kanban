@@ -1,11 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../style/boardcolumn.css";
 import Ticket from "./Ticket";
 import UpdateTicket from "./UpdateTicket";
 import { useDroppable } from "@dnd-kit/core";
 
-function BoardColumn({ boardTitle, data, onNewTicket }) {
+function BoardColumn({ boardTitle, data, onNewTicket}) {
   const [dataState, setDataState] = useState(data);
   const [open, setOpen] = useState(false);
   const [detailData, setDetailData] = useState();
@@ -66,6 +66,13 @@ function BoardColumn({ boardTitle, data, onNewTicket }) {
     setDetailData(newTicket);
   };
 
+  //update Tickets once drag&drop is ended
+  useEffect(() => {
+    setDataState(data)
+  }, [data])
+
+
+
   return (
     <div className="board-column">
       <div className="board-column__title">
@@ -79,7 +86,7 @@ function BoardColumn({ boardTitle, data, onNewTicket }) {
         </button>
       </div>
 
-      <div ref={setNodeRef}>
+      <div ref={setNodeRef} className="board-column__ticketholder">
         {dataState.map((ticket, index) => {
           return (
             <Ticket

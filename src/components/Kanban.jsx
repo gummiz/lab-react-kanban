@@ -1,11 +1,12 @@
 import "../style/kanban.css";
 import BoardColumn from "./BoardColumn";
 import data from "../data/sampleData.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DndContext, rectIntersection } from "@dnd-kit/core";
 
 function Kanban() {
   const [ticketCount, setTicketCount] = useState(data.length);
+  const [dataAll, setDataAll] = useState(data);
 
   const boardArray = ["To Do", "In Progress", "Done"];
 
@@ -15,6 +16,18 @@ function Kanban() {
     return newTicketId;
   };
 
+  const changeColumn = (id, container) => {
+    const newData = [...dataAll];
+    newData.forEach((ticket) => {
+      if(ticket.id === id){
+        ticket.status = container;
+      }
+    })
+    setDataAll(newData);
+    console.table(dataAll);
+  }
+
+
   return (
     <DndContext collisionDetection={rectIntersection}
     onDragEnd={(e) =>{
@@ -22,11 +35,14 @@ function Kanban() {
       const title = e.active.data.current?.title ?? "";
       const index = e.active.data.current?.index ?? 0;
       const parent = e.active.data.current?.parent ?? "To Do";
-      console.log("Container:", container);
-      console.log("Title:", title);
+      console.log("Container (Target):", container);
+      console.log("ID:", title);
       console.log("Index:", index);
-      console.log("Parent:", parent);
-      //Implement Conditions ....
+      console.log("Parent (coming from):", parent);
+      console.log("------------------------");
+      
+      //update the 
+      changeColumn(title, container);
     } }
     >
       <div className="kanban">
@@ -35,7 +51,7 @@ function Kanban() {
             <BoardColumn
               boardTitle={boardTitle}
               key={index}
-              data={data.filter((tickets) => tickets.status === boardTitle)}
+              data={dataAll.filter((tickets) => tickets.status === boardTitle)}
               // ticketCount={ticketCount}
               onNewTicket={onNewTicket}
             />

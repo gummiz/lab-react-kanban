@@ -31,3 +31,6 @@ background-position: center 32px;;
     color: rgb(45, 197, 250);
 
 }
+.board-column__ticketholder {
+    height: 100%;
+}
