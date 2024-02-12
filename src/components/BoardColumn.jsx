@@ -62,9 +62,10 @@ function BoardColumn({ boardTitle, data, onNewTicket }) {
 
   return (
     <div className="board-column">
-      <div className="board-column__titleDiv">
+      <div className="board-column__title">
         <h4>{boardTitle}</h4>
-        <h4 onClick={() => openHandler()}>+</h4>
+        {/* <h4 onClick={() => openHandler()}><i class="fa-solid fa-square-plus"></i></h4> */}
+        <button onClick={() => openHandler()} className="board-column__title__plusBtn"><i className="fa-solid fa-square-plus"></i></button>
       </div>
 
       {dataState.map((ticket, index) => {

@@ -1,43 +1,139 @@
 .updateTicket {
-    height: 100%;
-    width: 100%;
-    left: 50%;
-    top:50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    background-color: rgb(0, 0, 0, 0.5);
-    display: flex;
-    align-Items: center;
-    justify-content: center;
+  height: 100%;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .updateTicket__content {
-    background: white;
-    color: black;
-    height: 350px;
-    width: 500px;
-    margin: auto;
-    padding: 2%;
-    /* border: 2px solid #000; */
-    border-radius: 10px;
-    box-shadow: 2px solid black;
-    display: flex;
-    flex-direction: column;
+  background-color: #262526;
+  border: 10px solid #1c1c1c;
+  color: #eaeaea;
+  height: 447px;
+  width: 459px;
+  margin: auto;
+  padding: 2%;
+  /* border: 2px solid #000; */
+  border-radius: 10px;
+  box-shadow: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
 
+.updateTicket__content label {
+  color: rgb(234, 234, 234, 0.5);
+  font-size: 0.9em;
 }
 
 .updateTicket form {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 15px;
-
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+  box-sizing: border-box;
 }
 
-.updateTicket form input, label {
-    
-    padding-bottom: 15px;
+.updateTicket input {
+  height: 10px;
+  width: 120px;
 
+  border: 1px solid #262526;
+  background-color: #262526;
+  color: #eaeaea;
+  border-radius: 3px;
+  vertical-align: center;
+  padding-left: 10px;
+  padding-top: 15px;
 }
-.updateTicket__radio{
-    /* display: none; */
+
+.updateTicket__content input[name="title"] {
+  height: 15px;
+  width: 393px;
+  font-size: 1.4em;
+  padding-top: 14px;
+  margin-bottom: 10px;
+}
+
+.updateTicket__content input:hover {
+  border: 1px solid #656565;
+}
+.updateTicket input:focus-visible {
+  border: 1px solid #8b8b8b;
+
+  outline: none;
+}
+
+.updateTicket__content__formfild textarea {
+  width: 318px;
+  border: 1px solid #262526;
+  background-color: #262526;
+  color: #eaeaea;
+  border-radius: 3px;
+  padding-left: 10px;
+  font-family: "Inter", sans-serif;
+  resize: none;
+}
+
+.updateTicket__content__formfild {
+  display: flex;
+  align-items: start; /* This will vertically center the label and textarea */
+}
+
+.updateTicket__content__formfild label {
+  padding-top: 3px;
+}
+
+.updateTicket form input,
+label {
+  padding-bottom: 15px;
+}
+
+.updateTicket__content__radioGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Radio Button */
+/* Initially hide the radio buttons */
+/* Hide the radio buttons */
+.updateTicket__radio {
+  display: none;
+}
+
+.updateTicket__content__radioGroup {
+  color: rgb(234, 234, 234, 0.5);
+  font-size: 0.9em;
+}
+/* Style for the labels */
+.updateTicket__content__radioGroup__btn {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: white; /* Text color is white */
+}
+
+/* Full opacity style for selected radio buttons */
+.updateTicket__radio:checked + .updateTicket__content__radioGroup__btn {
+  background-color: #73af4f; /* Green background for the "Low" label */
+  color: white; /* White text */
+}
+
+.updateTicket__radio:checked + .updateTicket__content__radioGroup__btn.yellow {
+  background-color: #af9a4f; /* Yellow background for the "Medium" label */
+}
+
+.updateTicket__radio:checked + .updateTicket__content__radioGroup__btn.red {
+  background-color: #af4f4f; /* Red background for the "High" label */
 }

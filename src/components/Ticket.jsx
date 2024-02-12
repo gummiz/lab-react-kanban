@@ -17,7 +17,7 @@ function Ticket({ data, onDelete, onDetails }) {
       <div className="ticket__footer">
         {/* <img src="" alt="" /> */}
         <p>{data.dueDate}</p>
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={handleDelete} className="ticket__footer_deleteBtn"><i className="fa fa-trash-o"></i></button>
       </div>
     </div>
   );

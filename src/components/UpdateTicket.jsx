@@ -48,54 +48,69 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate }) {
               onChange={inputHandler}
             />
           </label>
-          <label>
-            Description
-            <input
+          <div className="updateTicket__content__formfild">
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              rows="3"
               name="description"
               type="text"
               placeholder="Description"
               value={inputs.description || ""}
               onChange={inputHandler}
+            ></textarea>
+          </div>
+
+          <div className="updateTicket__content__radioGroup">
+            Prioritisation
+            <input
+              id="low"
+              name="priority"
+              type="radio"
+              value="Low"
+              className="updateTicket__radio"
+              checked={inputs.priority === "Low" || false}
+              onChange={inputHandler}
             />
-          </label>
-
-          <label>
-            Prio
-            <label>
+            <label
+              htmlFor="low"
+              className="updateTicket__content__radioGroup__btn"
+            >
               Low
-              <input
-                name="priority"
-                type="radio"
-                value="Low"
-                className="updateTicket__radio"
-                checked={inputs.priority === "Low" || false}
-                onChange={inputHandler}
-              />
             </label>
-            <label>
+            <input
+              id="medium"
+              name="priority"
+              type="radio"
+              className="updateTicket__radio"
+              value="Medium"
+              checked={inputs.priority === "Medium" || false}
+              onChange={inputHandler}
+            />
+            <label
+              htmlFor="medium"
+              className="updateTicket__content__radioGroup__btn yellow"
+            >
               Medium
-              <input
-                name="priority"
-                type="radio"
-                className="updateTicket__radio"
-                value="Medium"
-                checked={inputs.priority === "Medium" || false}
-                onChange={inputHandler}
-              />
             </label>
-            <label>
-              Hight
-              <input
-                name="priority"
-                type="radio"
-                className="updateTicket__radio"
-                value="High"
-                checked={inputs.priority === "High" || false}
-                onChange={inputHandler}
-              />
+            <input
+              id="high"
+              name="priority"
+              type="radio"
+              className="updateTicket__radio"
+              value="High"
+              checked={inputs.priority === "High" || false}
+              onChange={inputHandler}
+            />
+            <label
+              htmlFor="high"
+              className="updateTicket__content__radioGroup__btn red"
+            >
+              High
             </label>
-          </label>
+          </div>
 
+     
           <label>
             Due Date
             <input
