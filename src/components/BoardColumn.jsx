@@ -5,7 +5,7 @@ import Ticket from "./Ticket";
 import UpdateTicket from "./UpdateTicket";
 import { useDroppable } from "@dnd-kit/core";
 
-function BoardColumn({ boardTitle, data, onNewTicket}) {
+function BoardColumn({ boardTitle, data, onNewTicket, deleteData, updateTicketUp}) {
   const [dataState, setDataState] = useState(data);
   const [open, setOpen] = useState(false);
   const [detailData, setDetailData] = useState();
@@ -14,9 +14,7 @@ function BoardColumn({ boardTitle, data, onNewTicket}) {
   });
 
   const deleteHandler = (index) => {
-    const updatedData = [...dataState];
-    updatedData.splice(index, 1);
-    setDataState(updatedData);
+    deleteData(index);
   };
 
   // Detail Dialog popup
@@ -58,17 +56,14 @@ function BoardColumn({ boardTitle, data, onNewTicket}) {
       createdDate: displayCreatedDate(),
       status: boardTitle,
     };
-    const updatedData = [newTicket, ...dataState];
-    setDataState(updatedData);
-
-    console.log("New Ticket", newTicket);
-    console.table(newTicket);
+    updateTicketUp(newTicket);
     setDetailData(newTicket);
   };
 
   //update Tickets once drag&drop is ended
   useEffect(() => {
     setDataState(data)
+    console.log();
   }, [data])
 
 

@@ -27,6 +27,17 @@ function Kanban() {
     console.table(dataAll);
   }
 
+  const deleteData = (index) => {
+    console.log("delete index:", index);
+    const updatedData = [...dataAll];
+    updatedData.splice(index, 1);
+    setDataAll(updatedData);
+  }
+
+const updateTicketUp = (newTicket) => {
+  const updatedData = [newTicket, ...dataAll];
+    setDataAll(updatedData);
+}
 
   return (
     <DndContext collisionDetection={rectIntersection}
@@ -54,6 +65,8 @@ function Kanban() {
               data={dataAll.filter((tickets) => tickets.status === boardTitle)}
               // ticketCount={ticketCount}
               onNewTicket={onNewTicket}
+              deleteData={deleteData}
+              updateTicketUp={updateTicketUp}
             />
           );
         })}
