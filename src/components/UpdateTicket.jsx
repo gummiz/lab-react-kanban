@@ -6,7 +6,6 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate }) {
   const [inputs, setInputs] = useState(data);
 
   const inputHandler = (e) => {
-    console.log("changing");
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const submitHandler = (e) => {
