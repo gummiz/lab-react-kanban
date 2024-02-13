@@ -2,8 +2,16 @@ import "../style/kanban.css";
 import BoardColumn from "./BoardColumn";
 import data from "../data/sampleData.json";
 import { useEffect, useState } from "react";
-import { DndContext, rectIntersection, MouseSensor, TouchSensor, useSensor,
-  useSensors } from "@dnd-kit/core";
+import {
+  DndContext,
+  rectIntersection,
+  MouseSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Kanban() {
   const [ticketCount, setTicketCount] = useState(data.length);
@@ -17,10 +25,26 @@ function Kanban() {
     },
   });
 
-  const sensors = useSensors(
-    mouseSensor
-  );
+  const sensors = useSensors(mouseSensor);
 
+  // ============ TOATS MESSAGES =========
+  const showNewTicketMessage = () => {
+    toast.success("New Ticket created!", {
+      // position: toast.POSITION.TOP_CENTER,
+    });
+  };
+
+  const showUpdateMessage = () => {
+    toast.success("Ticket was updated!", {
+      // position: toast.POSITION.TOP_CENTER,
+    });
+  };
+
+  const showDeleteMessage = () => {
+    toast.success("Your ticket has been delete!", {
+      // position: toast.POSITION.TOP_CENTER,
+    });
+  };
 
 
   const boardArray = ["To Do", "In Progress", "Done"];
@@ -28,58 +52,63 @@ function Kanban() {
   const onNewTicket = () => {
     const newTicketId = ticketCount + 1;
     setTicketCount(newTicketId);
+    showNewTicketMessage();
     return newTicketId;
   };
 
   const changeColumn = (id, container) => {
     const newData = [...dataAll];
     newData.forEach((ticket) => {
-      if(ticket.id === id){
+      if (ticket.id === id) {
         ticket.status = container;
       }
-    })
+    });
     setDataAll(newData);
-  }
+  };
 
   const deleteData = (index) => {
     const updatedData = [...dataAll];
     updatedData.splice(index, 1);
     setDataAll(updatedData);
-  }
+    showDeleteMessage()
+  };
 
-const updateTicketUp = (newTicket) => {
-  const updatedData = [newTicket, ...dataAll];
+  const createTicketUp = (newTicket) => {
+    const updatedData = [newTicket, ...dataAll];
     setDataAll(updatedData);
-}
+  };
 
-const updatingDataFromDetails = (input) => {
-  setDataAll(
-    dataAll.map((tickets) =>
-      tickets.id === input.id ? (tickets = input) : tickets
-    )
-  );
- 
-}
+  const updatingDataFromDetails = (input) => {
+    setDataAll(
+      dataAll.map((tickets) =>
+        tickets.id === input.id ? (tickets = input) : tickets
+      )
+    );
+    showUpdateMessage();
+  };
+
+
 
   return (
-    <DndContext collisionDetection={rectIntersection} sensors={sensors}
-    onDragEnd={(e) =>{
-      const container = e.over?.id;
-      const title = e.active.data.current?.title ?? "";
-      const index = e.active.data.current?.index ?? 0;
-      const parent = e.active.data.current?.parent ?? "To Do";
-      // console.log("Container (Target):", container);
-      // console.log("ID:", title);
-      // console.log("Index:", index);
-      // console.log("Parent (coming from):", parent);
-      // console.log("------------------------");
-      
-      //update the 
-      changeColumn(title, container);
-    } }
-    
+    <DndContext
+      collisionDetection={rectIntersection}
+      sensors={sensors}
+      onDragEnd={(e) => {
+        const container = e.over?.id;
+        const title = e.active.data.current?.title ?? "";
+        const index = e.active.data.current?.index ?? 0;
+        const parent = e.active.data.current?.parent ?? "To Do";
+        // console.log("Container (Target):", container);
+        // console.log("ID:", title);
+        // console.log("Index:", index);
+        // console.log("Parent (coming from):", parent);
+        // console.log("------------------------");
+
+        //update the
+        changeColumn(title, container);
+      }}
     >
-      <div className="kanban">
+      <div className="kanban" >
         {boardArray.map((boardTitle, index) => {
           return (
             <BoardColumn
@@ -89,11 +118,12 @@ const updatingDataFromDetails = (input) => {
               // ticketCount={ticketCount}
               onNewTicket={onNewTicket}
               deleteData={deleteData}
-              updateTicketUp={updateTicketUp}
+              createTicketUp={createTicketUp}
               updatingDataFromDetails={updatingDataFromDetails}
             />
           );
         })}
+        <ToastContainer />
       </div>
     </DndContext>
   );

@@ -5,7 +5,7 @@ import Ticket from "./Ticket";
 import UpdateTicket from "./UpdateTicket";
 import { useDroppable } from "@dnd-kit/core";
 
-function BoardColumn({ boardTitle, data, onNewTicket, deleteData, updateTicketUp, updatingDataFromDetails}) {
+function BoardColumn({ boardTitle, data, onNewTicket, deleteData, createTicketUp, updatingDataFromDetails}) {
   const [dataState, setDataState] = useState(data);
   const [open, setOpen] = useState(false);
   const [detailData, setDetailData] = useState();
@@ -13,6 +13,8 @@ function BoardColumn({ boardTitle, data, onNewTicket, deleteData, updateTicketUp
     id: boardTitle,
   });
 
+
+    
   const deleteHandler = (index) => {
     deleteData(index);
   };
@@ -50,7 +52,7 @@ function BoardColumn({ boardTitle, data, onNewTicket, deleteData, updateTicketUp
       createdDate: displayCreatedDate(),
       status: boardTitle,
     };
-    updateTicketUp(newTicket);
+    createTicketUp(newTicket);
     setDetailData(newTicket);
   };
 

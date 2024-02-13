@@ -21,6 +21,8 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate }) {
     e.stopPropagation();
   };
 
+  
+
   return (
     <div className="updateTicket" onClick={onClose}>
       <div className="updateTicket__content" onClick={onInsideClick}>
