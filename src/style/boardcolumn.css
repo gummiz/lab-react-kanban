@@ -28,7 +28,7 @@ background-position: center 32px;;
 }
 
 .board-column__title__plusBtn:hover {
-    color: rgb(45, 197, 250);
+    color: #2dc5fa;
 
 }
 .board-column__ticketholder {
