@@ -30,19 +30,20 @@ function Kanban() {
   // ============ TOATS MESSAGES =========
   const showNewTicketMessage = () => {
     toast.success("New Ticket created!", {
-      // position: toast.POSITION.TOP_CENTER,
+      position: "top-right"
     });
   };
 
   const showUpdateMessage = () => {
     toast.success("Ticket was updated!", {
-      // position: toast.POSITION.TOP_CENTER,
+      position: "top-right"
+      
     });
   };
 
   const showDeleteMessage = () => {
     toast.success("Your ticket has been delete!", {
-      // position: toast.POSITION.TOP_CENTER,
+      position: "top-right"
     });
   };
 
