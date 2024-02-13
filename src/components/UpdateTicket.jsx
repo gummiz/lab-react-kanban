@@ -46,7 +46,7 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate }) {
           </label>
 
           <div className="updateTicket__content__formfild">
-            <label htmlFor="description">Description</label>
+            <label htmlFor="description" className="description_label">Description</label>
             <textarea
               id="description"
               rows="3"

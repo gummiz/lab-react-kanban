@@ -12,7 +12,7 @@ function Sidebar() {
       <div className="sidebar__subsection">
         <ul>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about" className="about">About</Link>
           </li>
         </ul>
       </div>

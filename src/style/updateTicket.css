@@ -58,6 +58,7 @@
   font-size: 1.4em;
   padding-top: 15px;
   margin-bottom: 10px;
+  /* border-bottom: 1px solid #383638; */
 }
 
 .updateTicket__content input:hover {
@@ -73,16 +74,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: rgb(234, 234, 234, 0.5);
 }
 
 .updateTicket__content .assignee_input {
   /* margin-left: 25px; */
-  width: 300px;
+  width: 280px;
   border: 1px solid #383638;
 }
 
+.description_label {
+  color: rgb(234, 234, 234, 0.5);
+}
+
 .updateTicket__content__formfild textarea {
-  width: 300px;
+  width: 280px;
   border: 1px solid #262526;
   background-color: #3d3d3d;
   color: #eaeaea;
@@ -174,10 +180,11 @@ label {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: rgb(234, 234, 234, 0.5);
 }
 
 .updateTicket__content .due-date_input {
-  width: 300px;
+  width: 280px;
   border: 1px solid #383638;
   font-family: "Inter", sans-serif;
   color: #eaeaea;
@@ -187,31 +194,29 @@ label {
 .button_group {
   display: flex;
   justify-content: end;
-
 }
 
-
 .primeBtn {
-    padding: 10px 20px;
-    color: #222;
-    background-color: #eaeaea;
-    border: none;
-    border-radius: 10px;
+  padding: 10px 20px;
+  color: #222;
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 10px;
 }
 
 .primeBtn:hover {
-    background-color: rgb(45, 197, 250);;
+  background-color: rgb(45, 197, 250);
 }
 
 .secBtn:hover {
-    border-color: rgb(45, 197, 250);
+  border-color: rgb(45, 197, 250);
 }
 
 .secBtn {
-    margin-right: 10px ;
-    padding: 10px 20px;
-    border: 2px solid #eaeaea;
-    border-radius: 10px;
-    background-color: transparent;
-    color: #eaeaea;
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: 2px solid #eaeaea;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #eaeaea;
 }
