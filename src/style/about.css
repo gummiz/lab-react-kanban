@@ -1,7 +1,86 @@
 .about {
-    background-color: #1C1C1C;
-    color: #EAEAEA;
+  background-color: #1c1c1c;
+  color: #eaeaea;
 
-    display: flex;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__container {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+}
+
+.about_intro h2 {
+  padding: 20px 0;
+  font-size: 2em;
+}
+
+.about_intro p {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  padding-bottom: 30px;
+}
+
+.about__person {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+.about__person h2 {
+  font-size: 1.4em;
+  padding: 0 0 10px;
+
+}
+
+
+.about__profile-image {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  border-radius: 50px;
+}
+
+.stefan {
+  background: url("../assets/stefan.png") no-repeat;
+  background-size: contain;
+}
+
+.thomas {
+  background: url("../assets/thomas.jpeg") no-repeat;
+  background-size: contain;
+}
+
+
+.about__container__person {
+  display: flex;
+  flex-direction: row;
+  width: 700px;
+  justify-content: start;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.about__buttons_github {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #333;
+  color: #fff;
+  border: none;
+}
+
+.about__buttons__linkedin {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #0077B5;
+  color: #fff;
+  border: none;
+}
+
+.about__buttons button {
+  margin-right: 10px;
 }

@@ -19,3 +19,9 @@
   font-size: 1.2em;
   font-weight: 600;
 }
+
+.sidebar a:hover {
+  color: rgb(45, 197, 250);
+}
+
+

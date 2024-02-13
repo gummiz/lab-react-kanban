@@ -1,6 +1,5 @@
 import "../style/errorpage.css";
 import BoardColumn from "./BoardColumn";
-import spiderweb from "../assets/web.png"
 function Errorpage() {
   return (
     <div className="errorpage">
