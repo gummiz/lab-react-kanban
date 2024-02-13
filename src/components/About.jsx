@@ -21,8 +21,8 @@ function About() {
           <div className="about__person">
             <h2>Thomas Deblay</h2>
             <div className="about__buttons">
-            <a href="#" ><button className="about__buttons_github">Github</button></a>
-              <a href="#"><button className="about__buttons__linkedin">LinkedIn</button></a>
+            <a href="https://github.com/Thomas-Deblay" ><button className="about__buttons_github">Github</button></a>
+              <a href="https://www.linkedin.com/in/thomas-deblay"><button className="about__buttons__linkedin">LinkedIn</button></a>
             </div>
           </div>
         </div>
@@ -31,8 +31,8 @@ function About() {
           <div className="about__person">
             <h2>Stefan Kummerlöw</h2>
             <div className="about__buttons">
-              <a href="#" ><button className="about__buttons_github">Github</button></a>
-              <a href="#"><button className="about__buttons__linkedin">LinkedIn</button></a>
+              <a href="https://github.com/gummiz" ><button className="about__buttons_github">Github</button></a>
+              <a href="https://www.linkedin.com/in/stefankummerloew/"><button className="about__buttons__linkedin">LinkedIn</button></a>
             </div>
           </div>
         </div>
