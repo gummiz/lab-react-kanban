@@ -21,9 +21,13 @@ function Ticket({ data, onDelete, onDetails, title, index, parent }) {
     onDelete();
   };
 
+  console.log(data.priority);
+  const high = data.priority === 'High' ? 'high-priority' : '';
+  const medium = data.priority === 'Medium' ? 'medium-priority' : '';
+
   return (
     <div
-      className="ticket"
+      className={`ticket ${high} ${medium}`}
       onClick={onDetails}
       transform={style.transform}
       {...listeners}
