@@ -17,4 +17,4 @@ This Kanban app was created as part of our Ironhack full-stack web development b
 - [ ]  add new Project
 
 
-[<kbd> <br> View Demo <br> </kbd>](https://thunderous-kulfi-84c3d9.netlify.app)
+[<kbd> <br> View Demo <br> </kbd>](https://hackboard3000.netlify.app/)
