@@ -10,9 +10,10 @@ function About() {
           This Kanban app was created as part of our Ironhack full-stack web
           development bootcamp. Built following the React project brief, it
           showcases our ability to work with JSON data, create single-page
-          applications, and implement essential React features. This project
-          demonstrates the skills and understanding we have gained during our
-          training.
+          applications, implement essential React features, navigate complex
+          third-party documentation, and utilize routing within React. This
+          project demonstrates the skills and understanding we have gained
+          during our training.
         </p>
       </div>
       <div>
@@ -21,8 +22,12 @@ function About() {
           <div className="about__person">
             <h2>Thomas Deblay</h2>
             <div className="about__buttons">
-            <a href="https://github.com/Thomas-Deblay" ><button className="about__buttons_github">Github</button></a>
-              <a href="https://www.linkedin.com/in/thomas-deblay"><button className="about__buttons__linkedin">LinkedIn</button></a>
+              <a href="https://github.com/Thomas-Deblay">
+                <button className="about__buttons_github">Github</button>
+              </a>
+              <a href="https://www.linkedin.com/in/thomas-deblay">
+                <button className="about__buttons__linkedin">LinkedIn</button>
+              </a>
             </div>
           </div>
         </div>
@@ -31,8 +36,12 @@ function About() {
           <div className="about__person">
             <h2>Stefan Kummerlöw</h2>
             <div className="about__buttons">
-              <a href="https://github.com/gummiz" ><button className="about__buttons_github">Github</button></a>
-              <a href="https://www.linkedin.com/in/stefankummerloew/"><button className="about__buttons__linkedin">LinkedIn</button></a>
+              <a href="https://github.com/gummiz">
+                <button className="about__buttons_github">Github</button>
+              </a>
+              <a href="https://www.linkedin.com/in/stefankummerloew/">
+                <button className="about__buttons__linkedin">LinkedIn</button>
+              </a>
             </div>
           </div>
         </div>
