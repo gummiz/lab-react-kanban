@@ -41,9 +41,9 @@ function Kanban() {
     setDataAll(newData);
   }
 
-  const deleteData = (index) => {
+  const deleteData = (id) => {
     const updatedData = [...dataAll];
-    updatedData.splice(index, 1);
+    updatedData.forEach((el,index) => {el.id===id && updatedData.splice(index, 1) } )
     setDataAll(updatedData);
   }
 
