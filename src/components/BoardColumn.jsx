@@ -20,7 +20,7 @@ function BoardColumn({ boardTitle, data, onNewTicket, deleteData, createTicketUp
     deleteData(index);
 =======
   const deleteHandler = (index) => {
-    deleteData(id);
+    deleteData(index);
 >>>>>>> css-fine-tune
   };
 
