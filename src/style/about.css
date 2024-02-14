@@ -20,8 +20,8 @@
 }
 
 .about_intro p {
-  font-size: 1.2em;
-  line-height: 1.5em;
+  font-size: 1.3em;
+  line-height: 1.8em;
   padding-bottom: 30px;
 }
 
@@ -71,6 +71,11 @@
   background-color: #333;
   color: #fff;
   border: none;
+  border-radius: 5px;
+}
+
+.about__buttons_github:hover {
+  background-color: #4b4b4b
 }
 
 .about__buttons__linkedin {
@@ -79,6 +84,11 @@
   background-color: #0077B5;
   color: #fff;
   border: none;
+  border-radius: 5px;
+}
+
+.about__buttons__linkedin:hover {
+  background-color: #108dd0;
 }
 
 .about__buttons button {

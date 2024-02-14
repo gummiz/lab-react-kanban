@@ -26,10 +26,6 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate }) {
   return (
     <div className="updateTicket" onClick={onClose}>
       <div className="updateTicket__content" onClick={onInsideClick}>
-        {/* <h1>
-          Dialog
-          {data.title}
-        </h1> */}
         <form onSubmit={submitHandler}>
           <input
             name="title"
@@ -39,9 +35,10 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate }) {
             onChange={inputHandler}
           />
 
-          <label>
+          <label className="assignee_label">
             Assignee
             <input
+              className="assignee_input"
               name="assignee"
               type="text"
               placeholder="assignee"
@@ -49,8 +46,9 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate }) {
               onChange={inputHandler}
             />
           </label>
+
           <div className="updateTicket__content__formfild">
-            <label htmlFor="description">Description</label>
+            <label htmlFor="description" className="description_label">Description</label>
             <textarea
               id="description"
               rows="3"
@@ -75,7 +73,7 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate }) {
             />
             <label
               htmlFor="low"
-              className="updateTicket__content__radioGroup__btn"
+              className="updateTicket__content__radioGroup__btn low"
             >
               Low
             </label>
@@ -90,7 +88,7 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate }) {
             />
             <label
               htmlFor="medium"
-              className="updateTicket__content__radioGroup__btn yellow"
+              className="updateTicket__content__radioGroup__btn medium"
             >
               Medium
             </label>
@@ -105,26 +103,28 @@ function UpdateTicket({ isOpen, onClose, data, onUpdate }) {
             />
             <label
               htmlFor="high"
-              className="updateTicket__content__radioGroup__btn red"
+              className="updateTicket__content__radioGroup__btn high"
             >
               High
             </label>
           </div>
 
-     
-          <label>
+          <label className="due-date_label">
             Due Date
             <input
+              className="due-date_input"
               name="dueDate"
               type="date"
               placeholder=""
-              value={data.dueDate || ""}
+              value={inputs.dueDate || ""}
               onChange={inputHandler}
             />
           </label>
-          <button type="submit">Save Ticket</button>
+          <div className="button_group">
+            <button onClick={onClose} className="secBtn">Closing</button>
+            <button type="submit" className="primeBtn">Save Ticket</button>
+          </div>
         </form>
-        <button onClick={onClose}>Closing</button>
       </div>
     </div>
   );

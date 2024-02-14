@@ -1,8 +1,5 @@
-# React + Vite
+# HackBoard a Kanban App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Kanban app was created as part of our Ironhack full-stack web development bootcamp. Built following the React project brief, it showcases our ability to work with JSON data, create single-page applications, implement essential React features, navigate complex third-party documentation, and utilize routing within React. This project demonstrates the skills and understanding we have gained during our training.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Features

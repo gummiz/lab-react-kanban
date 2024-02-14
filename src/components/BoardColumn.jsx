@@ -13,10 +13,15 @@ function BoardColumn({ boardTitle, data, onNewTicket, deleteData, createTicketUp
     id: boardTitle,
   });
 
+<<<<<<< HEAD
 
     
   const deleteHandler = (index) => {
     deleteData(index);
+=======
+  const deleteHandler = (index) => {
+    deleteData(id);
+>>>>>>> css-fine-tune
   };
 
   // Detail Dialog popup
@@ -85,7 +90,7 @@ function BoardColumn({ boardTitle, data, onNewTicket, deleteData, createTicketUp
               title={ticket.id}
               index={index}
               parent={boardTitle}
-              onDelete={() => deleteHandler(index)}
+              onDelete={() => deleteHandler(ticket.id)}
               onDetails={() => openHandler(index)}
             />
           );

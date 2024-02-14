@@ -6,11 +6,31 @@
   flex-direction: column;
   align-items: center;
   border-top: 1px solid rgb(234, 234, 234, 0.1) ;
+  border-bottom: 1px solid rgb(234, 234, 234, 0.1) ;
   padding-top: 20px;
+}
+
+.sidebar h2 {
+  font-size: 1.5em;
+  padding-bottom: 0px;
+}
+.sidebar hr {
+  border-color: rgb(234, 234, 234, 0.06);
+  width: 160px;
+  padding-bottom:10px ;
 }
 
 .sidebar ul {
   list-style: none;
+
+}
+
+.sidebar li {
+  padding-bottom: 15px;
+}
+
+.sidebar .inactive {
+  font-weight: 300;
 }
 
 .sidebar a {
@@ -20,8 +40,15 @@
   font-weight: 600;
 }
 
+
+
 .sidebar a:hover {
   color: rgb(45, 197, 250);
 }
 
-
+.sidebar .about {
+  font-size: 0.9em;
+  font-weight: 300;
+  margin-bottom: 20px;
+  background-color: transparent;
+}

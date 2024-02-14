@@ -4,16 +4,25 @@ import { Link } from "react-router-dom";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <div className="sidebar__projectname">
-        <ul>
-        <Link to="/">Project 1</Link>
-        </ul>
+      <div>
+        <h2>Projects</h2>
+        <hr />
+        <div className="sidebar__projectname">
+          <ul>
+            <li>
+              <Link to="/">Demo Project </Link>
+            </li>
+            <li>
+              <Link to="/404" className="inactive">Module 3</Link>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="sidebar__subsection">
         <ul>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
+          <Link to="/about" className="about">
+            About
+          </Link>
         </ul>
       </div>
     </div>

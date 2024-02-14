@@ -15,10 +15,10 @@
   background-color: #262526;
   border: 10px solid #1c1c1c;
   color: #eaeaea;
-  height: 447px;
-  width: 459px;
+  height: 440px;
+  width: 460px;
   margin: auto;
-  padding: 2%;
+  padding: 20px;
   /* border: 2px solid #000; */
   border-radius: 10px;
   box-shadow: 2px solid black;
@@ -27,16 +27,16 @@
 }
 
 .updateTicket__content label {
-  color: rgb(234, 234, 234, 0.5);
+  /* color: rgb(234, 234, 234, 0.5); */
   font-size: 0.9em;
-  padding-right: 10px;
 }
 
 .updateTicket form {
   display: flex;
   flex-direction: column;
-  padding-bottom: 15px;
   box-sizing: border-box;
+  height: 380px;
+  justify-content: space-between;
 }
 
 .updateTicket input {
@@ -49,15 +49,16 @@
   border-radius: 3px;
   vertical-align: center;
   padding-left: 10px;
-  padding-top: 15px;
+  padding: 15px 10px;
 }
 
 .updateTicket__content input[name="title"] {
   height: 15px;
-  width: 393px;
+  width: 380px;
   font-size: 1.4em;
-  padding-top: 14px;
+  padding-top: 15px;
   margin-bottom: 10px;
+  /* border-bottom: 1px solid #383638; */
 }
 
 .updateTicket__content input:hover {
@@ -69,20 +70,47 @@
   outline: none;
 }
 
+.updateTicket__content .assignee_label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(234, 234, 234, 0.5);
+}
+
+.updateTicket__content .assignee_input {
+  /* margin-left: 25px; */
+  width: 280px;
+  border: 1px solid #383638;
+}
+
+.description_label {
+  color: rgb(234, 234, 234, 0.5);
+}
+
 .updateTicket__content__formfild textarea {
-  width: 318px;
+  width: 280px;
   border: 1px solid #262526;
-  background-color: #262526;
+  background-color: #3d3d3d;
   color: #eaeaea;
-  border-radius: 3px;
-  padding-left: 10px;
+  border-radius: 5px;
+  padding: 10px;
   font-family: "Inter", sans-serif;
   resize: none;
+}
+
+.updateTicket__content__formfild textarea:hover {
+  border: 1px solid #656565;
+}
+
+.updateTicket__content__formfild textarea:focus-visible {
+  border: 1px solid #8b8b8b;
+  outline: none;
 }
 
 .updateTicket__content__formfild {
   display: flex;
   align-items: start; /* This will vertically center the label and textarea */
+  justify-content: space-between;
 }
 
 .updateTicket__content__formfild label {
@@ -116,7 +144,6 @@ label {
   display: inline-block;
   padding: 10px;
   margin: 5px;
-  border: 1px solid transparent;
   border-radius: 20px;
   width: 80px;
   text-align: center;
@@ -125,16 +152,71 @@ label {
   color: white; /* Text color is white */
 }
 
+.low {
+  background-color: rgb(115, 175, 79, 0.1);
+}
+.medium {
+  background-color: rgb(175, 154, 79, 0.1);
+}
+.high {
+  background-color: rgb(175, 79, 79, 0.1);
+}
+
 /* Full opacity style for selected radio buttons */
 .updateTicket__radio:checked + .updateTicket__content__radioGroup__btn {
   background-color: #73af4f; /* Green background for the "Low" label */
   color: white; /* White text */
 }
 
-.updateTicket__radio:checked + .updateTicket__content__radioGroup__btn.yellow {
+.updateTicket__radio:checked + .updateTicket__content__radioGroup__btn.medium {
   background-color: #af9a4f; /* Yellow background for the "Medium" label */
 }
 
-.updateTicket__radio:checked + .updateTicket__content__radioGroup__btn.red {
+.updateTicket__radio:checked + .updateTicket__content__radioGroup__btn.high {
   background-color: #af4f4f; /* Red background for the "High" label */
+}
+
+.updateTicket__content .due-date_label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(234, 234, 234, 0.5);
+}
+
+.updateTicket__content .due-date_input {
+  width: 280px;
+  border: 1px solid #383638;
+  font-family: "Inter", sans-serif;
+  color: #eaeaea;
+  color-scheme: dark;
+}
+
+.button_group {
+  display: flex;
+  justify-content: end;
+}
+
+.primeBtn {
+  padding: 10px 20px;
+  color: #222;
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 10px;
+}
+
+.primeBtn:hover {
+  background-color: rgb(45, 197, 250);
+}
+
+.secBtn:hover {
+  border-color: rgb(45, 197, 250);
+}
+
+.secBtn {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: 2px solid #eaeaea;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #eaeaea;
 }
